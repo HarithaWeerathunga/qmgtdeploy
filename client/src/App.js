@@ -97,7 +97,7 @@ class App extends React.Component {
 
     return(
       <div className="app">
-        <h1>Welcome</h1>
+        <h1>Queue Management System</h1>
         <form onSubmit={this.submit}>
           <div className="form-input">
             <input
