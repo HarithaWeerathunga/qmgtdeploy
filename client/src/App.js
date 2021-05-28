@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import './App.css';
+
 
 
 class App extends React.Component {
@@ -8,8 +10,28 @@ class App extends React.Component {
 
   state = {
     title:'',
-    body:''
+    body:'',
+    posts:[]
   };
+
+
+  componentDidMount = () => {
+    this.getBlogPost();
+  }
+
+
+  getBlogPost = () => {
+    axios.get('/api')
+    .then((response) => {
+      const data = response.data;
+      this.setState({posts:data});
+
+      console.log('data has been received');
+    })
+    .catch(()=> {
+      alert('error');
+    });
+  }
 
 
   handleChange = ({target}) => {
@@ -38,6 +60,7 @@ class App extends React.Component {
       .then(()=>{
         console.log('Data has been sent to the server');
         this.resetUserInputs();
+        this.getBlogPost();
       })
       .catch(()=> {
         console.log('error')
@@ -55,6 +78,17 @@ class App extends React.Component {
     });
   };
 
+  displayBlogPost = (posts) => {
+    if(!posts.length) return null;
+
+    return posts.map((post,index) => {
+      <div key={index} className="blog-post__display">
+        <h3>{post.title}</h3>
+        <p>{post.body}</p>
+      </div>
+    });
+  };
+
 
   render(){
 
@@ -62,7 +96,7 @@ class App extends React.Component {
     console.log('State', this.state);
 
     return(
-      <div>
+      <div className="app">
         <h1>Welcome</h1>
         <form onSubmit={this.submit}>
           <div className="form-input">
@@ -80,6 +114,11 @@ class App extends React.Component {
 
           <button>Submit</button>
         </form>
+
+
+        <div className="blog-">
+          {this.displayBlogPost(this.state.posts)}
+        </div>
       </div>
     )
   }
