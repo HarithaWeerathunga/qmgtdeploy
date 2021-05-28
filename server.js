@@ -9,10 +9,22 @@ const PORT = process.env.PORT || 8080;
 //http request logger
 app.use(morgan('tiny'));
 
-app.get('', (req,res) => {
+app.get('/api', (req,res) => {
     const data = {
         username: 'haritha',
         age: 21
     };
     res.json(data);
-})
+});
+
+
+app.get('/api/name', (req,res) => {
+    const data = {
+        username: 'weerathunga',
+        age: 21
+    };
+    res.json(data);
+});
+
+
+app.listen(PORT, console.log(`server is starting at ${PORT}`));
