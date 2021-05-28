@@ -23,6 +23,13 @@ mongoose.connection.on('connected', ()=> {
 });
 
 
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+
+
+
+
 //http request logger
 app.use(morgan('tiny'));
 app.use('/api', routes)

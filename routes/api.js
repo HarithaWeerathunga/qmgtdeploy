@@ -21,6 +21,30 @@ router.get('/', (req,res) => {
 });
 
 
+router.post('/save', (req,res) => {
+
+    console.log('Body :', req.body);
+
+    const data = req.body;
+
+    const newBlogPost = new BlogPost(data);
+
+    newBlogPost.save((error) => {
+        if(error){
+            res.status(500).json({msg:'internal server error'});
+            return;
+        }
+
+        return res.json({
+            msg: 'your data has been saved'
+        });
+    });
+
+    
+});
+
+
+
 router.get('/name', (req,res) => {
     const data = {
         username: 'weerathunga',
@@ -28,7 +52,6 @@ router.get('/name', (req,res) => {
     };
     res.json(data);
 });
-
 
 
 module.exports = router;
