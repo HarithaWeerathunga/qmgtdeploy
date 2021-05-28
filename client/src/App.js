@@ -11,12 +11,14 @@ class App extends React.Component {
   state = {
     title:'',
     body:'',
-    posts:[]
+    posts:[],
+    videos:[]
   };
 
 
   componentDidMount = () => {
     this.getBlogPost();
+    this.getVideoData();
   }
 
 
@@ -25,6 +27,20 @@ class App extends React.Component {
     .then((response) => {
       const data = response.data;
       this.setState({posts:data});
+
+      console.log('data has been received');
+    })
+    .catch(()=> {
+      alert('error');
+    });
+  }
+
+
+  getVideoData = () => {
+    axios.get('api/videos')
+    .then((response) => {
+      const data = response.data;
+      this.setState({videos:data});
 
       console.log('data has been received');
     })

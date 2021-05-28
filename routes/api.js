@@ -6,6 +6,26 @@ const router = express.Router();
 const BlogPost = require('../models/blogPost');
 
 
+const videos = [
+    {
+        id: 0,
+        name: 'Video 1'
+    },
+    {
+        id: 1,
+        name: 'Video 2'
+    },
+    {
+        id: 2,
+        name: 'Video 3'
+    }
+
+]
+
+router.get('/videos', (req,res) => res.json(videos));
+
+
+
 router.get('/', (req,res) => {
 
 
@@ -52,6 +72,9 @@ router.get('/name', (req,res) => {
     };
     res.json(data);
 });
+
+
+
 
 
 module.exports = router;
