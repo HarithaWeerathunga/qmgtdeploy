@@ -50,6 +50,9 @@ router.get('/video/:id/data', (req, res) => {
 router.get('/video/:id', (req, res) => {
     
     console.log("/video/id/------jjjjjj---");
+
+    if (process.env.NODE_ENV === 'production') {
+
     const path = `assets/${req.params.id}.mp4`;
     
     const stat = fs.statSync(path);
@@ -82,6 +85,7 @@ router.get('/video/:id', (req, res) => {
         fs.createReadStream(path).pipe(res);
     }
 
+    }
     
 });
 
