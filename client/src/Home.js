@@ -42,6 +42,13 @@ export default class Home extends Component{
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+
+                <div>
+                <h1>VideoID :</h1>
+                <video controls muted autoPlay>
+                    <source src={`api/video/1`}type="video/mp4"></source>
+                </video>
+                </div>
             </div>
         )
     }
