@@ -34,7 +34,7 @@ export default class Home extends Component{
                             <NavDropdown title="Select Videos" id="basic-nav-dropdown">
                                 {this.state.videos.map(video => 
                                     <div className="col-md-8" key={video.id}>
-                                        <NavDropdown.Item>{video.name}</NavDropdown.Item>
+                                        <NavDropdown.Item href={`/${video.id}`} >{video.name}</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                     </div>
                                     )}

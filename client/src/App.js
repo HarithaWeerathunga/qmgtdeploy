@@ -1,15 +1,27 @@
 import React from 'react';
+import {
+  Route, 
+  BrowserRouter as Router,
+  Switch
+} from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
 import Home from './Home';
+import Player from './Player';
 
 
 
 function App(){
 
   return(
-    <Home/>
+
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/:id" component={Player}></Route>
+      </Switch>
+    </Router>
   )
 }
 
