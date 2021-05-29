@@ -32,7 +32,8 @@ app.use(express.urlencoded({extended: false}));
 
 //http request logger
 app.use(morgan('tiny'));
-app.use('/api', routes)
+app.use('/', routes);
+app.use('/api', routes);
 
 
 if(process.env.NODE_ENV=== 'production'){
