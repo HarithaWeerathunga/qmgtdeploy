@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap';
 
 export default class Home extends Component{
 
@@ -43,8 +43,14 @@ export default class Home extends Component{
                     </Navbar.Collapse>
                 </Navbar>
 
+                <Container>
+                    <h1>VideoID 1:</h1>
+                </Container>
+
+            
+
                 <div>
-                <h1>VideoID :</h1>
+                
                 <video controls muted autoPlay>
                     <source src={`api/video/1`}type="video/mp4"></source>
                 </video>
