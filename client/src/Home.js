@@ -8,21 +8,38 @@ export default class Home extends Component{
     constructor(){
         super();
         this.state = {
-            videos:[]
+            videos:[],
+            count: 0
         }
     }
 
+    // async componentDidMount(){
+    //     try{
+    //         //const response = await fetch('api/videos');
+    //         //const response = await fetch('api/blogdata');
+    //         const response = await fetch('api/videodata');
+    //         const data = await response.json();
+    //         this.setState({videos : [...data]});
+    //         console.log(data);
+    //     }catch(error){
+    //         console.log(error);
+    //     }
+    // }
+
     async componentDidMount(){
-        try{
-            //const response = await fetch('api/videos');
-            //const response = await fetch('api/blogdata');
-            const response = await fetch('api/videodata');
-            const data = await response.json();
-            this.setState({videos : [...data]});
-            console.log(data);
-        }catch(error){
-            console.log(error);
-        }
+       try{
+           setInterval(async() => {
+               const response = await fetch('api/videodata/1/'+ this.state.count );
+               const data = await response.json();
+
+               this.setState({
+                   videos: [...data], count: this.state.count + 1
+               })
+
+           }, 1000);
+       }catch(e){
+           console.log(e);
+       }
     }
 
     render(){
@@ -35,12 +52,9 @@ export default class Home extends Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <NavDropdown title="Select Videos" id="basic-nav-dropdown">
-                            {this.state.videos.map(video => 
-                                    <div className="col-md-8" key={video.id}>
-                                        <NavDropdown.Item href={`/${video.id}`} >{video.qlength}</NavDropdown.Item>
+                                        <NavDropdown.Item>1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                    </div>
-                                    )}
+                                   
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
@@ -60,7 +74,7 @@ export default class Home extends Component{
                                     <h1>Analytics</h1>
                                     <Row>
                                         <Card>
-                                            <CardBody><h4>Queue Length</h4></CardBody>
+                                            <CardBody><h4>Queue Length</h4> {this.state.videos.map(video => <h4>{video.qlength}</h4>)} </CardBody>
                                         </Card>
                                     </Row>
                                     <Row>
@@ -75,7 +89,7 @@ export default class Home extends Component{
                                     </Row>
                                     <Row>
                                         <Card>
-                                            <CardBody><h4>VideoTime</h4></CardBody>
+                                            <CardBody><h4>VideoTime</h4> {this.state.count} </CardBody>
                                         </Card>
                                     </Row>
                                 </Container>

@@ -133,6 +133,15 @@ router.get('/videodata', (req,res) => {
 });
 
 
+router.get('/videodata/:id/:time', (req,res) => {
+
+
+    VideoAnalytic.find({vid: req.params.id, timeInSecond: req.params.time})
+    .then(foundAnalytics => res.json(foundAnalytics))
+    
+});
+
+
 
 
 // router.get('/blogdata', (req,res) => {

@@ -5,4 +5,12 @@ https://qmanagement.herokuapp.com/api/video/1
                                         <NavDropdown.Item href={`/${video.id}`} >{video.name}</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                     </div>
+
+
+
+
                                     )}
+
+
+<NavDropdown.Item href={`/${video.id}`} >{video.qlength}</NavDropdown.Item>
+                                        <NavDropdown.Divider/>
