@@ -7,6 +7,9 @@ const router = express.Router();
 
 const BlogPost = require('../models/blogPost');
 
+const mongoose = require('mongoose');
+const { collection } = require('../models/blogPost');
+const MONGODB_URI = 'mongodb+srv://admin:admin@cluster0.7gwjm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 const videos = [
     {
@@ -93,10 +96,35 @@ router.get('/video/:id', (req, res) => {
 });
 
 
+// router.get('/fromdb', (req,res) => {
+//     mongoose.connect(MONGODB_URI, function(err,db){
+//         if (err) throw err;
+//         var col = db.collection('blogposts')
+//         var arr = [];
+//         collection.find({}, function(err,docs){
+//             docs.each(function(err,doc){
+//                 if(doc){
+//                     console.log("prinitng doc");
+//                     console.log(doc);
+//                     arr.push(doc);
+//                 }else{
+//                     res.send(arr);
+//                 }
+//             })
+//         })
+//     })
+// })
+
+router.get('/blogdata', (req,res) => {
 
 
+    BlogPost.find()
+    .then(foundNotes => res.json(foundNotes))
+    
+});
 
-// router.get('/', (req,res) => {
+
+// router.get('/blogdata', (req,res) => {
 
 
 //     BlogPost.find({})
@@ -109,6 +137,8 @@ router.get('/video/:id', (req, res) => {
 //     });
     
 // });
+
+
 
 
 // router.post('/save', (req,res) => {

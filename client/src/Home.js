@@ -13,7 +13,8 @@ export default class Home extends Component{
 
     async componentDidMount(){
         try{
-            const response = await fetch('api/videos');
+            //const response = await fetch('api/videos');
+            const response = await fetch('api/blogdata');
             const data = await response.json();
             this.setState({videos : [...data]});
             console.log(data);
@@ -32,9 +33,9 @@ export default class Home extends Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <NavDropdown title="Select Videos" id="basic-nav-dropdown">
-                                {this.state.videos.map(video => 
+                            {this.state.videos.map(video => 
                                     <div className="col-md-8" key={video.id}>
-                                        <NavDropdown.Item href={`/${video.id}`} >{video.name}</NavDropdown.Item>
+                                        <NavDropdown.Item href={`/${video.id}`} >{video.title}</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                     </div>
                                     )}
