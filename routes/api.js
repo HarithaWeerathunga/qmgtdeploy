@@ -6,6 +6,7 @@ const fs = require('fs');
 const router = express.Router();
 
 const BlogPost = require('../models/blogPost');
+const VideoAnalytic = require('../models/videoAnalytic');
 
 const mongoose = require('mongoose');
 const { collection } = require('../models/blogPost');
@@ -122,6 +123,16 @@ router.get('/blogdata', (req,res) => {
     .then(foundNotes => res.json(foundNotes))
     
 });
+
+router.get('/videodata', (req,res) => {
+
+
+    VideoAnalytic.find()
+    .then(foundAnalytics => res.json(foundAnalytics))
+    
+});
+
+
 
 
 // router.get('/blogdata', (req,res) => {
