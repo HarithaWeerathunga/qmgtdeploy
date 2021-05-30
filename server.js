@@ -33,7 +33,8 @@ app.use(express.urlencoded({extended: false}));
 //http request logger
 app.use(morgan('tiny'));
 app.use('/api', routes);
-app.use('/api/video/id', routes);
+app.use('/api/', routes);
+app.use('/', routes);
 
 
 if(process.env.NODE_ENV=== 'production'){
