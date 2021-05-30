@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import { Container, Row,Col,Card,CardBody, Button} from 'reactstrap';
+import * as DiIcons from 'react-icons/di';
 
 export default class Home extends Component{
 
@@ -46,6 +47,7 @@ export default class Home extends Component{
         return(
             <div className="App App-header">
                 <Navbar bg="primary" variant="dark" expand="lg">
+                    <DiIcons.DiGoogleAnalytics color="white"/>
                     <Navbar.Brand>Queue Analytics</Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
