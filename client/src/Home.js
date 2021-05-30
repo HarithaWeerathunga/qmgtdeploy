@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import { Container, Row,Col,Card,CardBody, Button} from 'reactstrap';
 import * as DiIcons from 'react-icons/di';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
 
 export default class Home extends Component{
 
@@ -10,8 +12,15 @@ export default class Home extends Component{
         super();
         this.state = {
             videos:[],
-            count: 0
-        }
+            count: 0,
+            pause: false,
+            pausedAt: 0
+        };
+
+        this.handlePause = this.handlePause.bind(this);
+        this.handlePlay = this.handlePlay.bind(this);
+
+
     }
 
     // async componentDidMount(){
@@ -43,6 +52,23 @@ export default class Home extends Component{
        }
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        if(this.state.pause){
+            return false;
+        }
+        return true;
+    }
+
+    handlePause(){
+        this.refs.videoRef.pause();
+        this.setState({pause: true, pausedAt: this.state.count})
+    }
+
+    handlePlay(){
+        this.refs.videoRef.play();
+        this.setState({pause:false, count:this.state.pausedAt})
+    }
+
     render(){
         return(
             <div className="App App-header">
@@ -65,15 +91,19 @@ export default class Home extends Component{
                     <Row>
                         <Col>
                                 <div className="videoplay">
-                                    <video controls muted autoPlay>
+                                    <video ref="videoRef" controls muted autoPlay>
                                     <source src={`api/video/1`}type="video/mp4"></source>
                                     </video>
                                 </div>
+
+
+                               
+
                         </Col>
 
                         <Col>
-                                <Container>
-                                    <h1>Analytics</h1>
+                                <Container>                  
+
                                     <Row>
                                         <Card>
                                             <CardBody><h4>Queue Length</h4> {this.state.videos.map(video => <h4>{video.qlength}</h4>)} </CardBody>
@@ -93,6 +123,11 @@ export default class Home extends Component{
                                         <Card>
                                             <CardBody><h4>VideoTime</h4> {this.state.count} </CardBody>
                                         </Card>
+                                    </Row>
+
+                                    <Row > 
+                                       <Button active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
+                                       <Button  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
                                     </Row>
                                 </Container>
                         </Col>
