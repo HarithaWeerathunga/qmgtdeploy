@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
-import { Container, Row,Col,Card,CardBody } from 'reactstrap';
+import { Container, Row,Col,Card,CardBody, Button} from 'reactstrap';
 
 export default class Home extends Component{
 
@@ -79,12 +79,12 @@ export default class Home extends Component{
                                     </Row>
                                     <Row>
                                         <Card>
-                                            <CardBody><h4>Cashier Present</h4></CardBody>
+                                            <CardBody><h4>Cashier Present</h4> {this.state.videos.map(video => <h4>{video.cashierAvailability}</h4>)} </CardBody>
                                         </Card>
                                     </Row>
                                     <Row>
                                         <Card>
-                                            <CardBody><h4>Avg Waiting Time</h4></CardBody>
+                                            <CardBody><h4>Avg Waiting Time</h4> {this.state.videos.map(video => <h4>{video.averageWaitingTime}</h4>)}  </CardBody>
                                         </Card>
                                     </Row>
                                     <Row>
