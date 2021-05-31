@@ -79,7 +79,7 @@ export default class Home extends Component{
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <NavDropdown title="Select Videos" id="basic-nav-dropdown">
+                            {/* <NavDropdown title="Select Videos" id="basic-nav-dropdown">
                                         <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
@@ -87,7 +87,7 @@ export default class Home extends Component{
                                         <NavDropdown.Item href="/2">Video 3</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                    
-                            </NavDropdown>
+                            </NavDropdown> */}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
