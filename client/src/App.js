@@ -9,6 +9,7 @@ import axios from 'axios';
 import './App.css';
 import Home from './Home';
 import Player from './Player';
+import HomeTest from './HomeTest';
 
 
 

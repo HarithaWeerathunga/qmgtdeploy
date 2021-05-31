@@ -6,14 +6,15 @@
 .videoplay{
   height: 400px;
 
-  background-color: white;
+  background-color: black;
   width: 700px;
 }
 .App-header {
   min-height: 100vh;
   color: rgb(0, 247, 255);
-  background-color: rgba(212, 235, 197, 0.473);
+  background-color:black;
 }
+
 header, footer {
   background-color: white;
   text-align: center;

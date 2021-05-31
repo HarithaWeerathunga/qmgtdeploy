@@ -80,7 +80,11 @@ export default class Home extends Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <NavDropdown title="Select Videos" id="basic-nav-dropdown">
-                                        <NavDropdown.Item>1</NavDropdown.Item>
+                                        <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item href="/2">Video 3</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                    
                             </NavDropdown>
@@ -102,7 +106,7 @@ export default class Home extends Component{
                         </Col>
 
                         <Col>
-                                <Container>                  
+                                <Container class="card-container">                  
 
                                     <Row>
                                         <Card>
