@@ -5,14 +5,33 @@
 } */
 .videoplay{
   height: 400px;
-
+  max-width: inherit;
   background-color: black;
   width: 700px;
+  
+
 }
+
+.video{
+  width: 44rem;
+  height: 52vh;
+}
+
 .App-header {
   min-height: 100vh;
-  color: rgb(0, 247, 255);
+  /* color: rgb(0, 247, 255); */
   background-color:black;
+  color: white;
+}
+
+.button{
+  color: lightgreen;
+}
+
+.container {
+  font-size: large;
+  justify-content: center;
+  align-items: center;
 }
 
 header, footer {
@@ -31,7 +50,11 @@ footer {
 }
 .card {
   margin: 10px 0;
-  color: coral;
+  width: 18rem;
+  color: black;
+  border-radius: 20px;
+  box-shadow: deepskyblue;
+  background-color: rgb(255, 255, 255);
 }
 a, a:hover {
   color: #282c34;
@@ -49,6 +72,7 @@ img {
 p {
   margin-bottom: 5px;
   font-size: 16px;
+  color: white;
 }
 
 

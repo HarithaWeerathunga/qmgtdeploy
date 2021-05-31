@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
-import { Container, Row,Col,Card,CardBody, Button} from 'reactstrap';
+import { Container, Row,Col,Card,CardBody, Button, CardHeader} from 'reactstrap';
 import * as DiIcons from 'react-icons/di';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
+import * as FcIcons from 'react-icons/fc';
 
 export default class Home extends Component{
 
@@ -74,6 +75,7 @@ export default class Home extends Component{
             <div className="App App-header">
                 <Navbar bg="primary" variant="dark" expand="lg">
                     <DiIcons.DiGoogleAnalytics color="white"/>
+                    
                     <Navbar.Brand>Queue Analytics</Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
@@ -94,44 +96,50 @@ export default class Home extends Component{
                 <Container>
                     <Row>
                         <Col>
+
+                                <FcIcons.FcVideoCall/> Video 1
                                 <div className="videoplay">
                                     <video ref="videoRef" controls muted autoPlay>
                                     <source src={`api/video/1`}type="video/mp4"></source>
                                     </video>
                                 </div>
 
-
-                               
-
                         </Col>
 
                         <Col>
-                                <Container class="card-container">                  
-
+                                <Container class="card-container">    
+                                                  
+                                    <FcIcons.FcComboChart/> Analytics 
                                     <Row>
                                         <Card>
-                                            <CardBody><h4>Queue Length</h4> {this.state.videos.map(video => <h4>{video.qlength}</h4>)} </CardBody>
+                                            <CardHeader> <FcIcons.FcConferenceCall/> Queue Length</CardHeader>
+                                            <CardBody>{this.state.videos.map(video => <h4>{video.qlength}</h4>)} </CardBody>
+                                        </Card>
+                                        
+                                    </Row>
+                                    <Row>
+                                        <Card>
+                                            <CardHeader> <FcIcons.FcAlarmClock/> Average Waiting Time</CardHeader>
+                                            <CardBody>{this.state.videos.map(video => <h4>{video.averageWaitingTime}</h4>)}  </CardBody>
                                         </Card>
                                     </Row>
                                     <Row>
                                         <Card>
-                                            <CardBody><h4>Cashier Present</h4> {this.state.videos.map(video => <h4>{video.cashierAvailability}</h4>)} </CardBody>
+                                            
+                                            <CardHeader><FcIcons.FcBusinessman/> Cashier Availability</CardHeader>
+                                            <CardBody>{this.state.videos.map(video => <h4>{video.cashierAvailability}</h4>)} </CardBody>
                                         </Card>
                                     </Row>
                                     <Row>
                                         <Card>
-                                            <CardBody><h4>Avg Waiting Time</h4> {this.state.videos.map(video => <h4>{video.averageWaitingTime}</h4>)}  </CardBody>
-                                        </Card>
-                                    </Row>
-                                    <Row>
-                                        <Card>
-                                            <CardBody><h4>VideoTime</h4> {this.state.count} </CardBody>
+                                            <CardHeader> <FcIcons.FcClapperboard/> Playback Time</CardHeader>
+                                            <CardBody> {this.state.count} </CardBody>
                                         </Card>
                                     </Row>
 
                                     <Row > 
-                                       <Button active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
-                                       <Button  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
+                                       <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
+                                       <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
                                     </Row>
                                 </Container>
                         </Col>
