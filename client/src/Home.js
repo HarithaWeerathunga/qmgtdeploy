@@ -5,6 +5,7 @@ import * as DiIcons from 'react-icons/di';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as FcIcons from 'react-icons/fc';
+import * as IoIcons from 'react-icons/io';
 
 export default class Home extends Component{
 
@@ -20,6 +21,7 @@ export default class Home extends Component{
 
         this.handlePause = this.handlePause.bind(this);
         this.handlePlay = this.handlePlay.bind(this);
+        this.handleRestart = this.handleRestart.bind(this);
 
 
     }
@@ -68,6 +70,13 @@ export default class Home extends Component{
     handlePlay(){
         this.refs.videoRef.play();
         this.setState({pause:false, count:this.state.pausedAt})
+    }
+
+    handleRestart(){
+        this.refs.videoRef.pause();
+        this.refs.videoRef.currentTime = 0;
+        this.refs.videoRef.play();
+        this.setState({pause: false, count: 0})
     }
 
     render(){
@@ -140,6 +149,7 @@ export default class Home extends Component{
                                     <Row > 
                                        <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
                                        <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
+                                       <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
                                     </Row>
                                 </Container>
                         </Col>
