@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 const VideoAnalyticSchema = new Schema({
     Time : Date,
     qlength: Number,
-    cashierAvailability: Number,
+    cashierAvailability: String,
     videoID: Number,
     timeInSecond: String,
     averageWaitingTime: Number,
