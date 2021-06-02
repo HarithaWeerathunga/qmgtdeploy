@@ -106,11 +106,18 @@ export default class Home extends Component{
                     <Row>
                         <Col>
 
+
                                 <FcIcons.FcVideoCall/> Video 1
                                 <div className="videoplay">
-                                    <video ref="videoRef" controls muted autoPlay>
+                                    <video ref="videoRef"  muted autoPlay>
                                     <source src={`api/video/1`}type="video/mp4"></source>
                                     </video>
+
+                                        <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
+                                       <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
+                                       <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
+                        
+                                       
                                 </div>
 
                         </Col>
@@ -146,11 +153,11 @@ export default class Home extends Component{
                                         </Card>
                                     </Row>
 
-                                    <Row > 
+                                    {/* <Row > 
                                        <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
                                        <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
                                        <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
-                                    </Row>
+                                    </Row> */}
                                 </Container>
                         </Col>
                     </Row>
