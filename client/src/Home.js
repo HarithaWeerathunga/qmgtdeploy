@@ -6,6 +6,8 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as FcIcons from 'react-icons/fc';
 import * as IoIcons from 'react-icons/io';
+import logo from './logo.png';
+
 
 export default class Home extends Component{
 
@@ -83,9 +85,13 @@ export default class Home extends Component{
         return(
             <div className="App App-header">
                 <Navbar bg="primary" variant="dark" expand="lg">
-                    <DiIcons.DiGoogleAnalytics color="white"/>
+                    {/* <DiIcons.DiGoogleAnalytics color="white"/> */}
                     
+                  
+                    <img  src={logo} style={{width: 130,height:50}}/>
+                    {'    '}
                     <Navbar.Brand>Queue Analytics</Navbar.Brand>
+                    
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
