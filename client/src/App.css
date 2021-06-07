@@ -22,11 +22,11 @@
 .App-header {
   min-height: 100vh;
   max-height: initial;
-  /* color: rgb(0, 247, 255); */
-  /* background-color:black; */
+  color: rgb(0, 247, 255); 
+  background-color:black;
   color: white;
-  background-image:url("./background.jpg");
-  background-repeat: no-repeat;
+  /* background-image:url("./background.jpg");
+  background-repeat: no-repeat; */
 
 }
 
