@@ -22,6 +22,7 @@ function App(){
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route path="/:id" component={Player}></Route>
+        <Route path="/video1" component={Player}></Route>
         
       </Switch>
     </Router>
