@@ -20,7 +20,7 @@ function App(){
 
     <Router>
       <Switch>
-        <Route exact path="/" component={Home}></Route>
+        <Route exact path="/" component={HomeGrid}></Route>
         <Route path="/:id" component={Player}></Route>
         
       </Switch>
