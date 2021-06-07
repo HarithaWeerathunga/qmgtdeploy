@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import './App.css';
 import Home from './Home';
+import HomeGrid from './HomeGrid';
 import Player from './Player';
 
 

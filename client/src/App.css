@@ -1,12 +1,14 @@
 
-/* .App{
+.App{
   height: 200px;
   width: 300px;
-} */
+} 
+
+
 .videoplay{
   height: 400px;
   max-width: inherit;
-  background-color: black;
+  /* background-color: black; */
   width: 700px;
   
 
@@ -19,14 +21,19 @@
 
 .App-header {
   min-height: 100vh;
+  max-height: initial;
   /* color: rgb(0, 247, 255); */
-  background-color:black;
+  /* background-color:black; */
   color: white;
+  background-image:url("./background.jpg");
+  background-repeat: no-repeat;
+
 }
 
 .button{
   color: lightgreen;
 }
+
 
 .container {
   font-size: large;

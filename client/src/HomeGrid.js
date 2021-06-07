@@ -10,7 +10,7 @@ import logo from './logo.png';
 import Parent from './Parent';
 
 
-export default class Home extends Component{
+export default class HomeGrid extends Component{
 
 
     constructor(){
@@ -103,7 +103,7 @@ export default class Home extends Component{
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            {/* <NavDropdown title="Select Videos" id="basic-nav-dropdown">
+                            <NavDropdown title="Select Videos" id="basic-nav-dropdown">
                                         <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
@@ -111,24 +111,24 @@ export default class Home extends Component{
                                         <NavDropdown.Item href="/2">Video 3</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                    
-                            </NavDropdown> */}
+                            </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-                
-                <Container>
+ 
                     
-                    <Row>
-                        <Col>
+                    <Row style={{'marginRight' : 0}}>
+                        <Col >
 
 
                                 <FcIcons.FcVideoCall/> Video 1
                                 <div className="videoplay">
                                
                                     <video ref="videoRef"  muted autoPlay>
+                                    &nbsp;&nbsp; 
                                     <source src={`api/video/1`}type="video/mp4"></source>
                                     </video>
-
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                                         <Button className="pausebutton" style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
                                        <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
                                        <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
@@ -138,7 +138,7 @@ export default class Home extends Component{
 
                         </Col>
 
-                        <Col>
+                        <Col >
                                 <Container class="card-container">    
                                                   
                                     <FcIcons.FcComboChart/> Analytics 
@@ -177,7 +177,7 @@ export default class Home extends Component{
                                 </Container>
                         </Col>
                     </Row>
-                </Container>
+           
 
 
                 
