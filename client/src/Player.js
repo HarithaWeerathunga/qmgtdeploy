@@ -91,7 +91,7 @@ export default class Player extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <NavDropdown title="Select Videos" id="basic-nav-dropdown">
+                            {/* <NavDropdown title="Select Videos" id="basic-nav-dropdown">
                                         <NavDropdown.Item> <Link to="/0" >Video 1</Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item> <Link to="/1" >Video 2 </Link> </NavDropdown.Item>
@@ -99,7 +99,7 @@ export default class Player extends Component {
                                         <NavDropdown.Item> <Link to="/2" >Video 3 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                    
-                            </NavDropdown>
+                            </NavDropdown> */}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -107,7 +107,7 @@ export default class Player extends Component {
                     <Col  xs={8} md={8}>
                     
                     <FcIcons.FcVideoCall/>
-                    <h1> VideoID : {this.state.videoId}</h1>
+                    <h3> VideoID : {this.state.videoId}</h3>
                     <video ref="videoRef" controls muted autoPlay>
                         <source src={`api/video/${this.state.videoId}`}type="video/mp4"></source>
                     </video>

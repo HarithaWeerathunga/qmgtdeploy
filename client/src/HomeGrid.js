@@ -105,18 +105,20 @@ export default class HomeGrid extends Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <NavDropdown title="Select Videos" id="basic-nav-dropdown">
-                                        {/* <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
+                                        <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/2">Video 3</NavDropdown.Item>
-                                        <NavDropdown.Divider/> */}
-                                        <NavDropdown.Item> <Link to="/0" >Video 1</Link></NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item href="/4">Video 4</NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        {/* <NavDropdown.Item> <Link to="/0" >Video 1</Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item> <Link to="/1" >Video 2 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item> <Link to="/2" >Video 3 </Link></NavDropdown.Item>
-                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Divider/> */}
                                    
                             </NavDropdown>
                         </Nav>
