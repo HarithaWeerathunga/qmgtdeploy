@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import { Container, Row,Col,Card,CardBody, Button, CardHeader} from 'reactstrap';
 import * as DiIcons from 'react-icons/di';
@@ -87,28 +88,34 @@ export default class HomeGrid extends Component{
 
            
          
-            <div className="App-header">
+            <div className="divmain" style={{backgroundColor: 'black'}}>
                
 
 
-                <Navbar bg="primary" variant="dark" expand="lg">
+                <Navbar style={{backgroundColor:'#ddff00'}} variant="dark" expand="lg">
                     {/* <DiIcons.DiGoogleAnalytics color="white"/> */}
                     
                   
                     <img  src={logo} style={{width: 130,height:50}}/>
                     
-                    <Navbar.Brand> &nbsp;&nbsp;   Queue Analytics</Navbar.Brand>
+                    <Navbar.Brand style={{color:'red'}}> &nbsp;&nbsp;   Queue Analytics</Navbar.Brand>
                     
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <NavDropdown title="Select Videos" id="basic-nav-dropdown">
-                                        <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
+                                        {/* <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/2">Video 3</NavDropdown.Item>
+                                        <NavDropdown.Divider/> */}
+                                        <NavDropdown.Item> <Link to="/0" >Video 1</Link></NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item> <Link to="/1" >Video 2 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item> <Link to="/2" >Video 3 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                    
                             </NavDropdown>
@@ -118,27 +125,37 @@ export default class HomeGrid extends Component{
  
                     
                     <Row style={{'marginRight' : 0}}>
-                        <Col >
+                        <Col xs={8} md={8}>
 
 
                                 <FcIcons.FcVideoCall/> Video 1
-                                <div className="videoplay">
+                               
                                
                                     <video ref="videoRef"  muted autoPlay>
                                     &nbsp;&nbsp; 
                                     <source src={`api/video/1`}type="video/mp4"></source>
                                     </video>
+                                    <br/>
+                                    
+                                    <div style={{'alignItems':'center'}}>
                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                        <Button className="pausebutton" style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
-                                       <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
-                                       <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    <Button className="pausebutton" style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
+                                    <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
+                                    <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
                         
                                        
-                                </div>
+                                    </div>
+                                       
+                                
 
                         </Col>
 
-                        <Col >
+                        <Col xs={4} md={4}>
                                 <Container class="card-container">    
                                                   
                                     <FcIcons.FcComboChart/> Analytics 

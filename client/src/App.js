@@ -20,8 +20,8 @@ function App(){
 
     <Router>
       <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route path="/:id" component={Player}></Route>
+        <Route exact path="/" component={HomeGrid}></Route>
+        <Route exact path="/:id" component={Player}></Route>
         <Route path="/video1" component={Player}></Route>
         
       </Switch>

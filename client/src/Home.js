@@ -91,7 +91,7 @@ export default class Home extends Component{
                
 
 
-                <Navbar bg="primary" variant="dark" expand="lg">
+                <Navbar class="nv" bg="primary"  variant="dark" expand="lg">
                     {/* <DiIcons.DiGoogleAnalytics color="white"/> */}
                     
                   

@@ -35,7 +35,7 @@ export default class Player extends Component {
     async componentDidMount(){
         try{
             setInterval(async() => {
-                const response = await fetch('api/videodata/1/'+ this.state.count );
+                const response = await fetch('api/videodata/'+this.state.videoId+'/'+ this.state.count );
                 const data = await response.json();
  
                 this.setState({
@@ -76,7 +76,7 @@ export default class Player extends Component {
 
     render(){
         return(
-            <div>
+            <div className="divmain" style={{backgroundColor: 'black'}}>
 
                 <Navbar bg="primary" variant="dark" expand="lg">
                     {/* <DiIcons.DiGoogleAnalytics color="white"/> */}
@@ -102,7 +102,7 @@ export default class Player extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-                <Row>
+                <Row  style={{'marginRight' : 0}}>
                     <Col  xs={8} md={8}>
                     
                     <FcIcons.FcVideoCall/>
@@ -110,12 +110,19 @@ export default class Player extends Component {
                     <video ref="videoRef" controls muted autoPlay>
                         <source src={`api/video/${this.state.videoId}`}type="video/mp4"></source>
                     </video>
-                    <Button className="pausebutton" style={{'color': 'lightblue', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
-                    <Button style={{'color': 'lightblue', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
-                    <Button style={{'color': 'lightblue', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
+                   <div style={{'alignItems':'center'}}>
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    <Button className="pausebutton" style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
+                                    <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
+                                    <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
                         
                                        
-                    
+                    </div>
                     </Col>
                     <Col  xs={4} md={4}>
 
