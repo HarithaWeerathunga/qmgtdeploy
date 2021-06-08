@@ -1,6 +1,7 @@
 import React, { Component , useState, useEffect } from 'react';
 import axios from 'axios';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import { Container, Row,Col,Card,CardBody, Button, CardHeader} from 'reactstrap';
 import * as DiIcons from 'react-icons/di';
 import * as FaIcons from 'react-icons/fa';
@@ -91,11 +92,11 @@ export default class Player extends Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <NavDropdown title="Select Videos" id="basic-nav-dropdown">
-                                        <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/0" >Video 1</Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/1" >Video 2 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item href="/2">Video 3</NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/2" >Video 3 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                    
                             </NavDropdown>
