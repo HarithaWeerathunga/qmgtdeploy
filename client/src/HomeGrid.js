@@ -113,13 +113,13 @@ export default class HomeGrid extends Component{
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/4">Video 4</NavDropdown.Item>
                                         <NavDropdown.Divider/> */}
-                                        <NavDropdown.Item> <Link to="/0" >Video 1</Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/0" >Camera 1</Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/1" >Video 2 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/1" >Camera 2 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/2" >Video 3 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/2" >Camera 3 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/4" >Video 4 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/4" >Camera 4 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         
                                    

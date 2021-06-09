@@ -107,7 +107,7 @@ export default class Player extends Component {
                     <Col  xs={8} md={8}>
                     
                     <FcIcons.FcVideoCall/>
-                    <h3> VideoID : {this.state.videoId}</h3>
+                    <h3> Camera ID : {this.state.videoId}</h3>
                     <video ref="videoRef" controls muted autoPlay>
                         <source src={`api/video/${this.state.videoId}`}type="video/mp4"></source>
                     </video>
