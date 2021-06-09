@@ -10,6 +10,7 @@ import './App.css';
 import Home from './Home';
 import HomeGrid from './HomeGrid';
 import Player from './Player';
+import Landing from './Landing';
 
 
 
@@ -20,7 +21,7 @@ function App(){
 
     <Router>
       <Switch>
-        <Route exact path="/" component={HomeGrid}></Route>
+        <Route exact path="/" component={Landing}></Route>
         <Route path="/:id" component={Player}></Route>
         {/* <Route path="/video1" component={Player}></Route> */}
         

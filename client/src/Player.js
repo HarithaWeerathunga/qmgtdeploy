@@ -106,9 +106,9 @@ export default class Player extends Component {
                 <Row  style={{'marginRight' : 0}}>
                     <Col  xs={8} md={8}>
                     
-                    <FcIcons.FcVideoCall/>
-                    <h3> Camera ID : {this.state.videoId}</h3>
-                    <video ref="videoRef" controls muted autoPlay>
+                    
+                    <h3> <FcIcons.FcVideoCall/> Camera ID : {this.state.videoId}</h3>
+                    <video ref="videoRef"  muted autoPlay>
                         <source src={`api/video/${this.state.videoId}`}type="video/mp4"></source>
                     </video>
                    <div style={{'alignItems':'center'}}>

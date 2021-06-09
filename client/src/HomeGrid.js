@@ -92,19 +92,19 @@ export default class HomeGrid extends Component{
                
 
 
-                <Navbar style={{backgroundColor:'#ddff00'}} variant="dark" expand="lg">
+                <Navbar style={{backgroundColor:'#ddff00'}} bg="primary" variant="dark" expand="lg">
                     {/* <DiIcons.DiGoogleAnalytics color="white"/> */}
                     
                   
                     <img  src={logo} style={{width: 130,height:50}}/>
                     
-                    <Navbar.Brand style={{color:'red'}}> &nbsp;&nbsp;   Queue Analytics</Navbar.Brand>
+                    <Navbar.Brand style={{color:'#ddff00'}}> &nbsp;&nbsp;   Queue Analytics</Navbar.Brand>
                     
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <NavDropdown title="Select Videos" id="basic-nav-dropdown">
+                            <NavDropdown  title="Select Videos" id="basic-nav-dropdown">
                                         {/* <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
