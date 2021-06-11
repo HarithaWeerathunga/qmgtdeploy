@@ -121,11 +121,11 @@ export default class Player extends Component {
                         
                                        
 
-                                        <li> <a to="/">Camera 1 </a></li>
+                                        <NavDropdown.Item> <Link to="/1" >Camera 1</Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item > <Link onClick={()=>console.log("working")}  to="/4" >Camera 4 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item > <Link onClick={()=>this.state.videoId=8} to="/8" >Camera 8 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/8" > Camera 8 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                    
                             </NavDropdown>
