@@ -128,11 +128,11 @@ export default class Player extends Component {
                         
                                        
                                     
-                                        <NavDropdown.Item onClick={this.handleClick}><Link to="/1" > Camera 1 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Item><Link to="/1"> Camera 1 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item onClick={this.handleClick}> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item onClick={this.handleClick}> <Link to="/8" > Camera 8 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/8"> Camera 8 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
 
                                         
