@@ -116,29 +116,29 @@ export default class Player extends Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             {/* <NavDropdown title= {"Camera " + this.state.videoId} id="basic-nav-dropdown"> */}
-                            <NavDropdown title="Select Camera" id="basic-nav-dropdown">
+                            {/* <NavDropdown title="Select Camera" id="basic-nav-dropdown">
 
                                  
-                                        {/* <NavDropdown.Item href="/1">Camera 1</NavDropdown.Item>
+                                        <NavDropdown.Item href="/1">Camera 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/4">Camera 4</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/8">Camera 8</NavDropdown.Item>
-                                        <NavDropdown.Divider/> */}
+                                        <NavDropdown.Divider/>
                         
                                        
                                     
-                                        {/* <NavDropdown.Item><Link to="/1"> Camera 1 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Item><Link to="/1"> Camera 1 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item> <Link to="/8"> Camera 8 </Link></NavDropdown.Item>
-                                        <NavDropdown.Divider/> */}
+                                        <NavDropdown.Divider/>
 
                                         
                           
                                    
-                            </NavDropdown>
+                            </NavDropdown> */}
                             <p style={{fontSize: 24 , color: 'blue'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -154,7 +154,7 @@ export default class Player extends Component {
                     <Col  xs={8} md={8}>
                     
                     
-                    <h3> <FcIcons.FcVideoCall/></h3> 
+                    <h3> <FcIcons.FcVideoCall/> Camera ID : {this.state.videoId}</h3> 
                     <video ref="videoRef"  muted autoPlay>
                         <source src={`api/video/${this.state.videoId}`}type="video/mp4"></source>
                         {/* <source src={`http://54.204.179.49:8080/api/video/${this.state.videoId}`}type="video/mp4"></source> */}
