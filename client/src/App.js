@@ -16,20 +16,25 @@ import Landing from './Landing';
 
 
 
+
 function App(){
 
   return(
 
     <Router>
-
+   
       <Switch>
+        
         <Route exact path="/" component={Landing}></Route>
         <Route path="/:id" component={Player}></Route>
-
+       
+       
         
+         
         {/* <Route path="/video1" component={Player}></Route> */}
         
       </Switch>
+      
     </Router>
     
 

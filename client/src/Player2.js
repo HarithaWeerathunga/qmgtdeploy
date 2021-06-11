@@ -1,7 +1,8 @@
 import React, { Component , useState, useEffect } from 'react';
 import axios from 'axios';
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import {Navbar, Nav, NavDropdown, Dropdown} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
+import {Link, Route, BrowserRouter as Router,Switch, useHistory} from 'react-router-dom';
 import { Container, Row,Col,Card,CardBody, Button, CardHeader} from 'reactstrap';
 import * as DiIcons from 'react-icons/di';
 import * as FaIcons from 'react-icons/fa';
@@ -13,11 +14,15 @@ import Parent from './Parent';
 
 
 
-export default class Player extends Component {
+export default class Player4 extends Component {
+
+    
 
 
     constructor(props){
         super(props);
+
+        
 
         this.state = {
             videoId: this.props.match.params.id,
@@ -27,9 +32,12 @@ export default class Player extends Component {
             pausedAt: 0
         }
 
+        
+
         this.handlePause = this.handlePause.bind(this);
         this.handlePlay = this.handlePlay.bind(this);
         this.handleRestart = this.handleRestart.bind(this);
+        
 
     }
 
@@ -48,6 +56,8 @@ export default class Player extends Component {
             console.log(e);
         }
      }
+
+     
  
      shouldComponentUpdate(nextProps, nextState){
          if(this.state.pause){
@@ -73,41 +83,69 @@ export default class Player extends Component {
          this.setState({pause: false, count: 0})
      }
 
+     handleClick = () => {
+        this.props.history.push("8");
+    }
 
 
+    
     render(){
-        return(
-            <div className="divmain" style={{backgroundColor: 'black'}}>
 
-                <Navbar bg="primary" variant="dark" expand="lg">
+        
+
+        return(
+            <div className="divmain" style={{backgroundColor: 'white', color:'black'}}>
+
+                <Navbar style={{color: 'blue'}} bg="light"  expand="lg">
                     {/* <DiIcons.DiGoogleAnalytics color="white"/> */}
                     
                   
-                    <img  src={logo} style={{width: 130,height:50}}/>
+                    <img  src={logo} style={{width: 140,height:50}}/>
                     
-                    <Navbar.Brand> &nbsp;&nbsp;   Queue Analytics</Navbar.Brand>
+                   
                     
-
+                    
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            {/* <NavDropdown title="Select Videos" id="basic-nav-dropdown">
-                                        <NavDropdown.Item> <Link to="/0" >Video 1</Link></NavDropdown.Item>
+                            {/* <NavDropdown title= {"Camera " + this.state.videoId} id="basic-nav-dropdown"> */}
+                            <NavDropdown title="Select Camera" id="basic-nav-dropdown">
+
+                                 
+                                        {/* <NavDropdown.Item href="/1">Camera 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/1" >Video 2 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Item href="/4">Camera 4</NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/2" >Video 3 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item href="/8">Camera 8</NavDropdown.Item>
+                                        <NavDropdown.Divider/> */}
+                        
+                                       
+                                    
+                                        <NavDropdown.Item> <Link to="/1" >Camera 1</Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
+                                        <NavDropdown.Item> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item> <Link to="/8" > Camera 8 </Link></NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                          
                                    
-                            </NavDropdown> */}
+                            </NavDropdown>
+                            <p style={{fontSize: 24 , color: 'blue'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;Queue Analyticssdfsdfsdf</p>
                         </Nav>
                     </Navbar.Collapse>
+                   
                 </Navbar>
                 <Row  style={{'marginRight' : 0}}>
                     <Col  xs={8} md={8}>
                     
                     
-                    <h3> <FcIcons.FcVideoCall/> Camera ID : {this.state.videoId}</h3>
+                    <h3> <FcIcons.FcVideoCall/></h3> 
                     <video ref="videoRef"  muted autoPlay>
                         <source src={`api/video/${this.state.videoId}`}type="video/mp4"></source>
                     </video>
@@ -118,9 +156,9 @@ export default class Player extends Component {
                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                    <Button className="pausebutton" style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
-                                    <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
-                                    <Button style={{'color': 'white', backgroundColor: 'initial'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
+                                    <Button className="pausebutton" style={{'color': 'white', backgroundColor: 'black'}}  active size="lg" onClick={this.handlePause} variant="primary"> <FaIcons.FaPause/> Pause </Button>
+                                    <Button style={{'color': 'white', backgroundColor: 'black'}}  active size="lg" onClick={this.handlePlay} variant="primary"><AiIcons.AiFillPlayCircle/> Play</Button>
+                                    <Button style={{'color': 'white', backgroundColor: 'black'}}  active size="lg" onClick={this.handleRestart} variant="primary"><IoIcons.IoMdRefreshCircle/> Restart</Button>
                         
                                        
                     </div>
@@ -130,6 +168,19 @@ export default class Player extends Component {
                     <Container class="card-container">    
                                                   
                                                   <FcIcons.FcComboChart/> Analytics 
+                                                  <Dropdown>
+                                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                                        Dropdown Button
+                                                    </Dropdown.Toggle>
+
+                                                    <Dropdown.Menu>
+                                                    <Dropdown.Item> <Link to="/1">camera 1</Link></Dropdown.Item>
+                                                    <Dropdown.Item> <Link to="/4">camera 4</Link></Dropdown.Item>
+                                                    <Dropdown.Item> <Link to="/8">camera 8</Link></Dropdown.Item>
+                                                   
+                                                   
+                                                    </Dropdown.Menu>
+                                                    </Dropdown>
                                                   <Row>
                                                       <Card>
                                                           <CardHeader> <FcIcons.FcConferenceCall/> Queue Length</CardHeader>

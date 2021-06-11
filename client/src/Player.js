@@ -1,8 +1,8 @@
 import React, { Component , useState, useEffect } from 'react';
 import axios from 'axios';
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown, Dropdown} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
-import {Link, useHistory} from 'react-router-dom';
+import {Link, Route, BrowserRouter as Router,Switch, useHistory} from 'react-router-dom';
 import { Container, Row,Col,Card,CardBody, Button, CardHeader} from 'reactstrap';
 import * as DiIcons from 'react-icons/di';
 import * as FaIcons from 'react-icons/fa';
@@ -30,7 +30,10 @@ export default class Player extends Component {
             count: 0,
             pause: false,
             pausedAt: 0
+            
         }
+
+     
 
         
 
@@ -40,6 +43,10 @@ export default class Player extends Component {
         
 
     }
+
+   
+
+
 
     async componentDidMount(){
         try{
@@ -84,7 +91,7 @@ export default class Player extends Component {
      }
 
      handleClick = () => {
-        this.props.history.push("8");
+        window.location.reload();
     }
 
 
@@ -120,13 +127,16 @@ export default class Player extends Component {
                                         <NavDropdown.Divider/> */}
                         
                                        
+                                    
+                                        <NavDropdown.Item onClick={this.handleClick}><Link to="/1" > Camera 1 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item onClick={this.handleClick}> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item onClick={this.handleClick}> <Link to="/8" > Camera 8 </Link></NavDropdown.Item>
+                                        <NavDropdown.Divider/>
 
-                                        <NavDropdown.Item> <Link to="/1" >Camera 1</Link></NavDropdown.Item>
-                                        <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
-                                        <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/8" > Camera 8 </Link></NavDropdown.Item>
-                                        <NavDropdown.Divider/>
+                                        
+                          
                                    
                             </NavDropdown>
                             <p style={{fontSize: 24 , color: 'blue'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -167,6 +177,7 @@ export default class Player extends Component {
                     <Container class="card-container">    
                                                   
                                                   <FcIcons.FcComboChart/> Analytics 
+                                                  
                                                   <Row>
                                                       <Card>
                                                           <CardHeader> <FcIcons.FcConferenceCall/> Queue Length</CardHeader>
