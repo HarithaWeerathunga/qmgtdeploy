@@ -25,12 +25,14 @@ export default class Player4 extends Component {
         
 
         this.state = {
-            videoId: this.props.match.params.id,
             videos:[],
             count: 0,
             pause: false,
             pausedAt: 0
+            
         }
+
+     
 
         
 
@@ -41,10 +43,14 @@ export default class Player4 extends Component {
 
     }
 
+   
+
+
+
     async componentDidMount(){
         try{
             setInterval(async() => {
-                const response = await fetch('api/videodata/'+this.state.videoId+'/'+ this.state.count );
+                const response = await fetch('api/videodata/4/'+ this.state.count );
                 const data = await response.json();
  
                 this.setState({
@@ -84,7 +90,7 @@ export default class Player4 extends Component {
      }
 
      handleClick = () => {
-        this.props.history.push("8");
+        window.location.reload();
     }
 
 
@@ -121,12 +127,14 @@ export default class Player4 extends Component {
                         
                                        
                                     
-                                        <NavDropdown.Item> <Link to="/1" >Camera 1</Link></NavDropdown.Item>
+                                        <NavDropdown.Item><Link to="/1"> Camera 1 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/8" > Camera 8 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/8"> Camera 8 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
+
+                                        
                           
                                    
                             </NavDropdown>
@@ -136,7 +144,7 @@ export default class Player4 extends Component {
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;Queue Analyticssdfsdfsdf</p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Queue Analytics</p>
                         </Nav>
                     </Navbar.Collapse>
                    
@@ -145,9 +153,10 @@ export default class Player4 extends Component {
                     <Col  xs={8} md={8}>
                     
                     
-                    <h3> <FcIcons.FcVideoCall/></h3> 
+                    <h3> <FcIcons.FcVideoCall/> Camera ID : 4</h3> 
                     <video ref="videoRef"  muted autoPlay>
-                        <source src={`api/video/${this.state.videoId}`}type="video/mp4"></source>
+                        <source src={`api/video/4`}type="video/mp4"></source>
+                        {/* <source src={`http://54.204.179.49:8080/api/video/${this.state.videoId}`}type="video/mp4"></source> */}
                     </video>
                    <div style={{'alignItems':'center'}}>
                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
@@ -168,19 +177,7 @@ export default class Player4 extends Component {
                     <Container class="card-container">    
                                                   
                                                   <FcIcons.FcComboChart/> Analytics 
-                                                  <Dropdown>
-                                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                                        Dropdown Button
-                                                    </Dropdown.Toggle>
-
-                                                    <Dropdown.Menu>
-                                                    <Dropdown.Item> <Link to="/1">camera 1</Link></Dropdown.Item>
-                                                    <Dropdown.Item> <Link to="/4">camera 4</Link></Dropdown.Item>
-                                                    <Dropdown.Item> <Link to="/8">camera 8</Link></Dropdown.Item>
-                                                   
-                                                   
-                                                    </Dropdown.Menu>
-                                                    </Dropdown>
+                                                  
                                                   <Row>
                                                       <Card>
                                                           <CardHeader> <FcIcons.FcConferenceCall/> Queue Length</CardHeader>

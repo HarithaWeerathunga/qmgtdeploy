@@ -12,6 +12,10 @@ import HomeGrid from './HomeGrid';
 import Player from './Player';
 import Landing from './Landing';
 
+import Player1 from './Player1';
+import Player4 from './Player4';
+import Player8 from './Player8';
+
 
 
 
@@ -26,7 +30,10 @@ function App(){
       <Switch>
         
         <Route exact path="/" component={Landing}></Route>
-        <Route path="/:id" component={Player}></Route>
+        {/* <Route path="/:id" component={Player}></Route> */}
+        <Route path="/1" component={Player1}></Route>
+        <Route path="/4" component={Player4}></Route>
+        <Route path="/8" component={Player8}></Route>
        
        
         
