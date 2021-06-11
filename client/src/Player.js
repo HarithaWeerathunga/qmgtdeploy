@@ -121,7 +121,7 @@ export default class Player extends Component {
                         
                                        
 
-                                        <li> <a href="/1" >Camera 1 </a></li>
+                                        <li> <a to="/">Camera 1 </a></li>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item > <Link onClick={()=>console.log("working")}  to="/4" >Camera 4 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
