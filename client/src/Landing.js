@@ -35,7 +35,7 @@ export default class Landing extends Component{
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto" >
-                            <NavDropdown title="Select Videos" id="basic-nav-dropdown">
+                            <NavDropdown title="Select Camera" id="basic-nav-dropdown">
                                         {/* <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
