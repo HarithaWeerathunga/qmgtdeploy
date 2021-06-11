@@ -19,23 +19,23 @@ export default class Landing extends Component{
 
            
          
-            <div className="divmain" style={{backgroundColor: 'black'}}>
+            <div className="divmain" style={{backgroundColor: 'white', color:'darkblue'}}>
                
 
 
-                <Navbar style={{backgroundColor:'#ddff00'}} bg="primary" variant="dark" expand="lg">
+                <Navbar style={{color: 'blue'}} bg="light"  expand="lg">
                     {/* <DiIcons.DiGoogleAnalytics color="white"/> */}
                     
                   
-                    <img  src={logo} style={{width: 130,height:50}}/>
+                    <img  src={logo} style={{width: 120,height:50}}/>
                     
-                    <Navbar.Brand style={{color:'darkblue'}}> &nbsp;&nbsp;   Queue Analytics</Navbar.Brand>
                     
-
+                   
+                    <p>&nbsp;</p>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                            <NavDropdown   title="Select Videos" id="basic-nav-dropdown">
+                        <Nav className="mr-auto" >
+                            <NavDropdown title="Select Videos" id="basic-nav-dropdown">
                                         {/* <NavDropdown.Item href="/0">Video 1</NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/1">Video 2</NavDropdown.Item>
@@ -44,19 +44,38 @@ export default class Landing extends Component{
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item href="/4">Video 4</NavDropdown.Item>
                                         <NavDropdown.Divider/> */}
-                                        <NavDropdown.Item> <Link to="/1" >Camera 1 </Link> </NavDropdown.Item>
+                                       
+                                        <NavDropdown.Item> <Link to="/1" >Camera 1</Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/2" >Camera 2 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/4" >Camera 4 </Link></NavDropdown.Item>
+                                        <NavDropdown.Item> <Link to="/8" > Camera 8 </Link></NavDropdown.Item>
                                         <NavDropdown.Divider/>
-                                        <NavDropdown.Item> <Link to="/8" >Camera 8 </Link></NavDropdown.Item>
+                                   
+                                      
+                                        {/* <NavDropdown.Item> <Nav.Link as={Link} to="/1" >Camera 1 </Nav.Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
+                                        <NavDropdown.Item> <Nav.Link as={Link} to="/2" >Camera 2 </Nav.Link></NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item> <Nav.Link as={Link} to="/4" >Camera 4 </Nav.Link></NavDropdown.Item>
+                                        <NavDropdown.Divider/>
+                                        <NavDropdown.Item> <Nav.Link as={Link} to="/8" >Camera 8 </Nav.Link></NavDropdown.Item>
+                                        <NavDropdown.Divider/> */}
                                         
                                    
                             </NavDropdown>
+                            <p style={{fontSize: 24 , color: 'blue'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;Queue Analytics</p>
                         </Nav>
+                       
                     </Navbar.Collapse>
+
+                   
                 </Navbar>
  
                  
