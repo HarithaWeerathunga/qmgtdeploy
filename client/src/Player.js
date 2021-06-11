@@ -128,7 +128,7 @@ export default class Player extends Component {
                         
                                        
                                     
-                                        <NavDropdown.Item onSelect={this.handleClick}><Link to="/1"> Camera 1 </Link> </NavDropdown.Item>
+                                        <NavDropdown.Item><Link to="/1"> Camera 1 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
                                         <NavDropdown.Item> <Link to="/4" >Camera 4 </Link> </NavDropdown.Item>
                                         <NavDropdown.Divider/>
@@ -157,6 +157,7 @@ export default class Player extends Component {
                     <h3> <FcIcons.FcVideoCall/></h3> 
                     <video ref="videoRef"  muted autoPlay>
                         <source src={`api/video/${this.state.videoId}`}type="video/mp4"></source>
+                        {/* <source src={`http://54.204.179.49:8080/api/video/${this.state.videoId}`}type="video/mp4"></source> */}
                     </video>
                    <div style={{'alignItems':'center'}}>
                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
