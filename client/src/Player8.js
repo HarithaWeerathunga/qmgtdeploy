@@ -153,7 +153,7 @@ export default class Player8 extends Component {
                     <Col  xs={8} md={8}>
                     
                     
-                    <h3> <FcIcons.FcVideoCall/> Camera ID : 4</h3> 
+                    <h3> <FcIcons.FcVideoCall/> Camera ID : 8</h3> 
                     <video ref="videoRef"  muted autoPlay>
                         <source src={`api/video/8`}type="video/mp4"></source>
                         {/* <source src={`http://54.204.179.49:8080/api/video/${this.state.videoId}`}type="video/mp4"></source> */}
