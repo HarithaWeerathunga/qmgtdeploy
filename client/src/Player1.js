@@ -27,7 +27,7 @@ export default class Player1 extends Component {
         this.state = {
             videos:[],
             count: 0,
-            pause: false,
+            pause: true,
             pausedAt: 0
             
         }
@@ -154,7 +154,7 @@ export default class Player1 extends Component {
                     
                     
                     <h3> <FcIcons.FcVideoCall/> Camera ID : 1</h3> 
-                    <video ref="videoRef"  muted autoPlay>
+                    <video ref="videoRef"  muted >
                         <source src={`api/video/1`}type="video/mp4"></source>
                         {/* <source src={`http://54.204.179.49:8080/api/video/${this.state.videoId}`}type="video/mp4"></source> */}
                     </video>
