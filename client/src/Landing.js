@@ -27,7 +27,7 @@ export default class Landing extends Component{
                     {/* <DiIcons.DiGoogleAnalytics color="white"/> */}
                     
                   
-                    <img  src={logo} style={{width: 120,height:50}}/>
+                    <img  src={logo} style={{width: 130,height:50}}/>
                     
                     
                    
