@@ -78,8 +78,16 @@ export default class Player1 extends Component {
      }
  
      handlePlay(){
-         this.refs.videoRef.play();
-         this.setState({pause:false, count:this.state.pausedAt})
+         if (this.state.count == 0){
+            this.refs.videoRef.currentTime = 0;
+            this.refs.videoRef.play();
+            this.setState({pause: false, count: 0})
+         }
+         else{
+            this.refs.videoRef.play();
+            this.setState({pause:false, count:this.state.pausedAt})
+         }
+         
      }
  
      handleRestart(){
