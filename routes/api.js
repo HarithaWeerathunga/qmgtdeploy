@@ -10,7 +10,7 @@ const VideoAnalytic = require('../models/videoAnalytic');
 
 const mongoose = require('mongoose');
 const { collection } = require('../models/blogPost');
-const MONGODB_URI = 'mongodb+srv://admin:admin@cluster0.7gwjm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGODB_URI = '';
 
 const videos = [
     {
